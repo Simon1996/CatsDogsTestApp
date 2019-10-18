@@ -12,11 +12,6 @@ inline fun <reified T : Activity> Activity.startActivity(toFlag: Int? = null,
                                                          extra: Parcelable? = null) =
         startActivity(createIntent<T>(toFlag, extra))
 
-inline fun <reified T : Activity> Activity.startActivityWithResult(toFlag: Int? = null,
-                                                                   extra: Parcelable? = null,
-                                                                   code: Int) =
-        startActivityForResult(createIntent<T>(toFlag, extra), code)
-
 inline fun <reified T : Parcelable?> Activity.getData(): T = intent!!.extras!!
         .getParcelable<T>(EXTRA)!!
 
